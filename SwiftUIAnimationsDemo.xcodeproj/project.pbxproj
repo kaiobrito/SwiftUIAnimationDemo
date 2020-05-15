@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B765703246E049100C95164 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B765702246E049100C95164 /* SignInView.swift */; };
 		8B765705246E049E00C95164 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B765704246E049E00C95164 /* DashboardView.swift */; };
+		8B765707246F10BE00C95164 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B765706246F10BE00C95164 /* Color+extension.swift */; };
 		8B80DB8C2466E0A100581174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80DB8B2466E0A100581174 /* AppDelegate.swift */; };
 		8B80DB8E2466E0A100581174 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80DB8D2466E0A100581174 /* SceneDelegate.swift */; };
 		8B80DB902466E0A100581174 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80DB8F2466E0A100581174 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		8B765702246E049100C95164 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		8B765704246E049E00C95164 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		8B765706246F10BE00C95164 /* Color+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
 		8B80DB882466E0A100581174 /* SwiftUIAnimationsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAnimationsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B80DB8B2466E0A100581174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B80DB8D2466E0A100581174 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				8B80DB932466E0A200581174 /* Preview Content */,
 				8B765702246E049100C95164 /* SignInView.swift */,
 				8B765704246E049E00C95164 /* DashboardView.swift */,
+				8B765706246F10BE00C95164 /* Color+extension.swift */,
 			);
 			path = SwiftUIAnimationsDemo;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B80DB8C2466E0A100581174 /* AppDelegate.swift in Sources */,
+				8B765707246F10BE00C95164 /* Color+extension.swift in Sources */,
 				8B80DB8E2466E0A100581174 /* SceneDelegate.swift in Sources */,
 				8B765705246E049E00C95164 /* DashboardView.swift in Sources */,
 				8B765703246E049100C95164 /* SignInView.swift in Sources */,
