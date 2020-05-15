@@ -11,6 +11,7 @@ import SwiftUI
 struct SignInView: View {
     @Binding var appState: AppState
     @State var isSubmitting = false
+    @State private var loaded = false
 
     var body: some View {
         ZStack {
@@ -78,7 +79,12 @@ struct SignInView: View {
                     Image("busy")
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: .infinity).offset(x: 0, y: -100),
+                        .frame(maxWidth: .infinity).offset(x: 0, y: -100)
+                        .scaleEffect(self.loaded ? 1.1 : 1.0)
+                        .animation(Animation.linear(duration: 15).repeatForever())
+                        .onAppear {
+                            self.loaded = true
+                    },
                     alignment: .top)
             }
             .blur(radius: isSubmitting ? 9 : 0.0)
