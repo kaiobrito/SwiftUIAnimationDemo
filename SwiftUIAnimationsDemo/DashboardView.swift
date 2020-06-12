@@ -11,28 +11,31 @@ import SwiftUI
 struct DashboardView: View {
     @Binding var appState: AppState
     @ObservedObject var viewModel: DashboardViewModel = DashboardViewModel()
+    @State var itemsPerRow = 3
     
     var body: some View {
         NavigationView {
             ZStack {
-                if (self.viewModel.humans.isEmpty) {
-                    LoadingGridView()
-                        .padding()
-                }
-
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        ForEach(self.viewModel.humans.chunked(into: 3), id: \.self) { section in
-                            HStack {
-                                ForEach(section) {
-                                    HumanView(human: $0)
-                                }
+                List {
+                    ForEach(self.viewModel.humans.chunked(into: itemsPerRow), id: \.self) { section in
+                        HStack {
+                            ForEach(section) {
+                                HumanView(human: $0)
                             }
+                            self.createEmptyRows(self.itemsPerRow - section.count)
                         }
                     }
-                    .padding()
                 }
+                .listStyle(GroupedListStyle())
             }
+            .background(
+                ZStack {
+                    if (self.viewModel.humans.isEmpty) {
+                        LoadingGridView()
+                            .padding()
+                    }
+                }
+            )
             .onAppear {
                 self.viewModel.loadTeam()
             }
@@ -42,12 +45,19 @@ struct DashboardView: View {
             })
         }
     }
+    
+    private func createEmptyRows(_ total: Int) -> some View {
+        ForEach(0 ..< total, id: \.self) { _ in
+            Circle()
+                .fill(Color.clear)
+        }
+    }
 }
 
 extension DashboardView {
     
     class DashboardViewModel: ObservableObject {
-        @Published var humans: [Human] = Bundle.main.decode([Human].self, from: "team.json")
+        @Published var humans: [Human] = []
 
         func loadTeam() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

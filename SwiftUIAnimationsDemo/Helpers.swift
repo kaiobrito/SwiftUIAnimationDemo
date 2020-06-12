@@ -20,6 +20,8 @@ func setupAppearance() {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+
+        UITableView.appearance().backgroundColor = UIColor.clear
     }
 }
 

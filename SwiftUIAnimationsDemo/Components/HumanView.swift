@@ -21,16 +21,25 @@ extension Human: Hashable, Identifiable {
 
 struct HumanView: View {
     var human: Human
+    
+    @State var showImage = false
+
     var body: some View {
         VStack {
             Image(self.human.image ?? "\(self.human.name.lowercased())-small")
                 .resizable()
-                .clipShape(Circle())
+                .clipShape(
+                    Circle()
+                )
                 .scaledToFit()
                 .grayscale(0.4)
                 .shadow(radius: 4)
+                .opacity(self.showImage ? 1.0 : 0)
+                .animation(.linear)
 
             Text(self.human.name)
+        }.onAppear {
+            self.showImage = true
         }
     }
 }
