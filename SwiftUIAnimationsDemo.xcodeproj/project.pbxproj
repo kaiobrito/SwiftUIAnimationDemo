@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B672FBC2493FDD4008AF510 /* LoadingGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B672FBB2493FDD4008AF510 /* LoadingGridView.swift */; };
+		8B672FBF2493FEFB008AF510 /* team.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B672FBE2493FEFB008AF510 /* team.json */; };
+		8B672FC12494009C008AF510 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B672FC02494009C008AF510 /* Helpers.swift */; };
+		8B672FC32494017A008AF510 /* HumanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B672FC22494017A008AF510 /* HumanView.swift */; };
+		8B672FC724940AB6008AF510 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B672FC624940AB6008AF510 /* HostingController.swift */; };
 		8B765703246E049100C95164 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B765702246E049100C95164 /* SignInView.swift */; };
 		8B765705246E049E00C95164 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B765704246E049E00C95164 /* DashboardView.swift */; };
 		8B765707246F10BE00C95164 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B765706246F10BE00C95164 /* Color+extension.swift */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B672FBB2493FDD4008AF510 /* LoadingGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingGridView.swift; sourceTree = "<group>"; };
+		8B672FBE2493FEFB008AF510 /* team.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = team.json; sourceTree = "<group>"; };
+		8B672FC02494009C008AF510 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		8B672FC22494017A008AF510 /* HumanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanView.swift; sourceTree = "<group>"; };
+		8B672FC624940AB6008AF510 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		8B765702246E049100C95164 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		8B765704246E049E00C95164 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		8B765706246F10BE00C95164 /* Color+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
@@ -43,6 +53,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B672FBA2493FDC4008AF510 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B672FBB2493FDD4008AF510 /* LoadingGridView.swift */,
+				8B672FC22494017A008AF510 /* HumanView.swift */,
+				8B672FC624940AB6008AF510 /* HostingController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8B672FBD2493FEE8008AF510 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B672FBE2493FEFB008AF510 /* team.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8B80DB7F2466E0A100581174 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +90,8 @@
 		8B80DB8A2466E0A100581174 /* SwiftUIAnimationsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8B672FBD2493FEE8008AF510 /* Resources */,
+				8B672FBA2493FDC4008AF510 /* Components */,
 				8B80DB8B2466E0A100581174 /* AppDelegate.swift */,
 				8B80DB8D2466E0A100581174 /* SceneDelegate.swift */,
 				8B80DB8F2466E0A100581174 /* ContentView.swift */,
@@ -72,6 +102,7 @@
 				8B765702246E049100C95164 /* SignInView.swift */,
 				8B765704246E049E00C95164 /* DashboardView.swift */,
 				8B765706246F10BE00C95164 /* Color+extension.swift */,
+				8B672FC02494009C008AF510 /* Helpers.swift */,
 			);
 			path = SwiftUIAnimationsDemo;
 			sourceTree = "<group>";
@@ -142,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B672FBF2493FEFB008AF510 /* team.json in Resources */,
 				8B80DB982466E0A200581174 /* LaunchScreen.storyboard in Resources */,
 				8B80DB952466E0A200581174 /* Preview Assets.xcassets in Resources */,
 				8B80DB922466E0A200581174 /* Assets.xcassets in Resources */,
@@ -155,8 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B672FC724940AB6008AF510 /* HostingController.swift in Sources */,
 				8B80DB8C2466E0A100581174 /* AppDelegate.swift in Sources */,
+				8B672FBC2493FDD4008AF510 /* LoadingGridView.swift in Sources */,
 				8B765707246F10BE00C95164 /* Color+extension.swift in Sources */,
+				8B672FC32494017A008AF510 /* HumanView.swift in Sources */,
+				8B672FC12494009C008AF510 /* Helpers.swift in Sources */,
 				8B80DB8E2466E0A100581174 /* SceneDelegate.swift in Sources */,
 				8B765705246E049E00C95164 /* DashboardView.swift in Sources */,
 				8B765703246E049100C95164 /* SignInView.swift in Sources */,

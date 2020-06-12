@@ -20,12 +20,12 @@ struct ContentView: View {
             if (appState.isSignedIn) {
                 DashboardView(appState: self.$appState)
                     .transition(
-                        .asymmetric(insertion: .move(edge: .bottom), removal: .scale)
+                        .asymmetric(insertion: .move(edge: .top), removal: .scale)
                 )
             } else {
                 SignInView(appState: self.$appState)
                     .transition(
-                        .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
+                        .asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .leading))
                 )
             }
         }
