@@ -19,14 +19,10 @@ struct ContentView: View {
         ZStack {
             if (appState.isSignedIn) {
                 DashboardView(appState: self.$appState)
-                    .transition(
-                        .asymmetric(insertion: .move(edge: .top), removal: .scale)
-                )
+                    .transition(AnyTransition.scale.animation(.spring()))
             } else {
                 SignInView(appState: self.$appState)
-                    .transition(
-                        .asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .leading))
-                )
+                    .transition(AnyTransition.opacity.animation(.linear))
             }
         }
     }

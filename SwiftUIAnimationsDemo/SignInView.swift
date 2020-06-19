@@ -24,68 +24,11 @@ struct SignInView: View {
                     .scaledToFit()
                     .padding()
                     .zIndex(999)
+                    .offset(y: self.loaded ? 0 : -100)
+                    .animation(.linear(duration: 0.75))
                 Spacer()
                 
-                VStack {
-                    HStack(alignment: .center) {
-                        Text("Log in").font(.headline).fontWeight(.semibold).foregroundColor(Color.heartRed)
-                        Text("to you account")
-                            .font(.subheadline)
-                            .foregroundColor(Color.gray)
-                    }
-                    
-                    VStack {
-                        Spacer()
-                        TextInput(label: "Username", icon: "envelope.fill")
-                        VStack {
-                            TextInput(label: "Password", icon: "lock.fill")
-                            HStack {
-                                Spacer()
-                                Button (action: {}) {
-                                    Text("Forgot your password?")
-                                        .font(.subheadline)
-                                        .foregroundColor(Color.heartRed)
-                                        .multilineTextAlignment(.trailing)
-                                }
-                            }
-                        }
-                        Spacer()
-                    }.padding(.vertical)
-                    
-                    
-                    VStack {
-                        SubmitButton(text: "Sign In", onSubmit: self.submit)
-                        
-                        Button(action:{}) {
-                            HStack {
-                                Text("Don't have an account?")
-                                    .foregroundColor(Color.gray)
-                                Text("Sign Up")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.heartRed)
-                            }
-                        }
-                    }
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white)
-                        .edgesIgnoringSafeArea(.bottom)
-                        .shadow(radius: 3)
-                )
-                .frame(maxHeight: 500)
-                .background(
-                    Image("busy")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity).offset(x: 0, y: -100)
-                        .scaleEffect(self.loaded ? 1.1 : 1.0)
-                        .animation(Animation.linear(duration: 15).repeatForever())
-                        .onAppear {
-                            self.loaded = true
-                    },
-                    alignment: .top)
+                FormView(loaded: self.$loaded, onSubmit: self.submit)
             }
             .blur(radius: isSubmitting ? 9 : 0.0)
             
@@ -113,7 +56,7 @@ struct SignInView: View {
     func submit() {
         self.isSubmitting = true
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.isSubmitting = false
             self.appState.isSignedIn = true
         }
@@ -195,5 +138,75 @@ struct SubmitButton: View {
         }, perform: {
             self.isPressing.toggle()
         })
+    }
+}
+
+struct FormView: View {
+    @Binding var loaded: Bool
+    var onSubmit: () -> Void
+
+    var body: some View {
+        VStack {
+            HStack(alignment: .center) {
+                Text("Log in").font(.headline).fontWeight(.semibold).foregroundColor(Color.heartRed)
+                Text("to you account")
+                    .font(.subheadline)
+                    .foregroundColor(Color.gray)
+            }
+            
+            VStack {
+                Spacer()
+                TextInput(label: "Username", icon: "envelope.fill")
+                VStack {
+                    TextInput(label: "Password", icon: "lock.fill")
+                    HStack {
+                        Spacer()
+                        Button (action: {}) {
+                            Text("Forgot your password?")
+                                .font(.subheadline)
+                                .foregroundColor(Color.heartRed)
+                                .multilineTextAlignment(.trailing)
+                        }
+                    }
+                }
+                Spacer()
+            }.padding(.vertical)
+            
+            
+            VStack {
+                SubmitButton(text: "Sign In", onSubmit: self.onSubmit)
+                
+                Button(action:{}) {
+                    HStack {
+                        Text("Don't have an account?")
+                            .foregroundColor(Color.gray)
+                        Text("Sign Up")
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.heartRed)
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.white)
+                .edgesIgnoringSafeArea(.bottom)
+                .shadow(radius: 3)
+        )
+            .frame(maxHeight: 500)
+            .background(
+                Image("busy")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity).offset(x: 0, y: -100)
+                    .scaleEffect(self.loaded ? 1.1 : 1.0)
+                    .animation(Animation.linear(duration: 15).repeatForever())
+                    .onAppear {
+                        self.loaded = true
+                },
+                alignment: .top)
+                .offset(y: self.loaded ? 0 : 100)
+                .animation(.linear(duration: 0.75))
     }
 }

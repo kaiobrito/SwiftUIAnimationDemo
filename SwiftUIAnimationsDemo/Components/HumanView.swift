@@ -35,7 +35,7 @@ struct HumanView: View {
                 .grayscale(0.4)
                 .shadow(radius: 4)
                 .opacity(self.showImage ? 1.0 : 0)
-                .animation(.linear)
+                .animation(.linear(duration: 1.0))
 
             Text(self.human.name)
         }.onAppear {
