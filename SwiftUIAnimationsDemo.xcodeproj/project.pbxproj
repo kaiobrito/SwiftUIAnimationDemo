@@ -21,7 +21,6 @@
 		8B80DB922466E0A200581174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B80DB912466E0A200581174 /* Assets.xcassets */; };
 		8B80DB952466E0A200581174 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B80DB942466E0A200581174 /* Preview Assets.xcassets */; };
 		8B80DB982466E0A200581174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B80DB962466E0A200581174 /* LaunchScreen.storyboard */; };
-		8BCF26D9249413AA0002AFAF /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF26D8249413AA0002AFAF /* PresentationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		8B80DB942466E0A200581174 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B80DB972466E0A200581174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B80DB992466E0A200581174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BCF26D8249413AA0002AFAF /* PresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +53,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B09C81E24A0D63F00F46D8C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8B80DB8F2466E0A100581174 /* ContentView.swift */,
+				8B765702246E049100C95164 /* SignInView.swift */,
+				8B765704246E049E00C95164 /* DashboardView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8B09C81F24A0D65500F46D8C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B765706246F10BE00C95164 /* Color+extension.swift */,
+				8B672FC02494009C008AF510 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		8B672FBA2493FDC4008AF510 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,20 +109,16 @@
 		8B80DB8A2466E0A100581174 /* SwiftUIAnimationsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8B09C81F24A0D65500F46D8C /* Helpers */,
+				8B09C81E24A0D63F00F46D8C /* Screens */,
 				8B672FBD2493FEE8008AF510 /* Resources */,
 				8B672FBA2493FDC4008AF510 /* Components */,
 				8B80DB8B2466E0A100581174 /* AppDelegate.swift */,
 				8B80DB8D2466E0A100581174 /* SceneDelegate.swift */,
-				8B80DB8F2466E0A100581174 /* ContentView.swift */,
 				8B80DB912466E0A200581174 /* Assets.xcassets */,
 				8B80DB962466E0A200581174 /* LaunchScreen.storyboard */,
 				8B80DB992466E0A200581174 /* Info.plist */,
 				8B80DB932466E0A200581174 /* Preview Content */,
-				8B765702246E049100C95164 /* SignInView.swift */,
-				8B765704246E049E00C95164 /* DashboardView.swift */,
-				8B765706246F10BE00C95164 /* Color+extension.swift */,
-				8B672FC02494009C008AF510 /* Helpers.swift */,
-				8BCF26D8249413AA0002AFAF /* PresentationView.swift */,
 			);
 			path = SwiftUIAnimationsDemo;
 			sourceTree = "<group>";
@@ -197,7 +210,6 @@
 				8B672FC32494017A008AF510 /* HumanView.swift in Sources */,
 				8B672FC12494009C008AF510 /* Helpers.swift in Sources */,
 				8B80DB8E2466E0A100581174 /* SceneDelegate.swift in Sources */,
-				8BCF26D9249413AA0002AFAF /* PresentationView.swift in Sources */,
 				8B765705246E049E00C95164 /* DashboardView.swift in Sources */,
 				8B765703246E049100C95164 /* SignInView.swift in Sources */,
 				8B80DB902466E0A100581174 /* ContentView.swift in Sources */,
